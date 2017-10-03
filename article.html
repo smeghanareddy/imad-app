@@ -1,43 +1,212 @@
+<!doctype html>
 <html>
-  <head>
- <title>school</title>
- <meta name="viewport" content="width-device-width,initial-scale-1"/>
- <link href="/ui/style.css" rel="stylesheet" />
- <style>
-     .container
-     {
-         max-width :1500px; 
-         background :white;
-         color:white;
-         margin: 10 auto;
-         padding:20px;
-     }
- </style>
- </head>
- <body>
- <div class="container">
-<div id="header-topbar-left-content">
-<div class="topbar-element custom-content">
-            <div class="txt-info">
-                <span class="info-img" style="font-size:14px;"> 
-                <img src="http://shantiniketan.net/wp-content/uploads/2016/12/call.png" style="margin-top:-4px;;margin-right:4px;">: +91.7671003535 &nbsp;
-                <span class="line-img"> | </span>&nbsp;</span><span class="email-img" style="font-size:14px;"> 
-                <img src="http://shantiniketan.net/wp-content/uploads/2016/12/email.png" style="margin-top:-4px;;margin-right:4px;">: shantiniketan99@gmail.com </span>
-            </div>
-   '<img src="http://shantiniketan.net/wp-content/uploads/2016/02/shantilogo48.png"height="150px",width="150px"></img>'
-   <li><a href="home.html">Home</a>
-  <a href ="about-us.html">about-us</a>
-  <a href="activity.html">activity</a><a href="home.html">Home</a>
-  <a href="about-us.h.html">Infrastructure</a>
-  <a href="admission.html">Admission Procedure</a>
-  <a href="video.html">videos</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contactus.html">contact us</a></li>
-</div>
-<hr/>
-<div>
- <p>khfdscbsdcgskcjs</p>
- </div>
-</div>
+    <head>
+<link href="/ui/style.css" rel="stylesheet" /> 
+    </head>
+    <body>
+div class="container">
+ <div class="main">
+<div class="content">
+<div class="item">
+<h1>User Registration </h1>
+<h2>User Registration Form</h2>
+                        <%@include file="inc/messages.jsp" %>
+                        <form action="ReistrationServlet" method="post">
+                            <%--  <div class="imgcontainer">
+                                  <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                              </div>--%>
+
+                            <%                                CommonIterface commonObj1 = new CommonImpl();
+                                Retobj retObj1 = null;
+                                Map<String, Object[]> mapObj1 = null;
+
+                            %>
+                            <div class="container">
+                                <table>
+
+
+
+                                    <tr>
+                                        <td>
+                                            <label><b>User Name</b></label>
+                                        </td>
+                                        <td>
+                                            <input type="text" placeholder="Enter Username" name="name" required/>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>
+                                            <label><b>User ID</b></label>
+                                        </td>
+                                        <td>
+                                            <input type="text" placeholder="Enter User ID" name="userid" required/>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>
+                                            <label><b>Password</b></label>
+                                        </td>
+                                        <td>
+                                            <input type="password" placeholder="Enter Password" name="psw" required/>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>
+                                            <label><b>Gender</b></label>
+                                        </td>
+                                        <td>
+                                            <select name="gender" required>
+                                                <option value="">SELECT</option>
+                                                <option value="MALE">MALE</option>
+                                                <option value="FEMALE">FEMALE</option>
+                                            </select>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label><b>E-Mail ID</b></label>
+                                        </td>
+                                        <td>
+                                            <input type="text" placeholder="Enter E-Mail ID" name="mail_id" required/>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label><b>Phone No.</b></label>
+                                        </td>
+                                        <td>
+                                            <input type="text" placeholder="Enter Phone No." name="phone" required/>
+                                        </td>
+                                    </tr>
+                                    <%
+                                    %>
+                                    
+                                    
+                                    <tr>
+                                        <td>
+                                            <label><b>Department</b></label>
+                                        </td>
+                                        <td>
+                                            <select name="department" required>
+                                                <option value="">SELECT DEPARTMENT</option>
+                                                <%                                                    retObj1 = commonObj1.getALLDetails("departments");
+                                                    mapObj1 = retObj1.getMapObj();
+                                                    if (null != mapObj1) {
+                                                        for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
+                                                            String key = entry.getKey();
+ Object[] value = (Object[]) entry.getValue();
+                                                %>
+
+                                                <option value="<%=key%>"><%=value[1]%></option>
+
+                                                <%
+                                                        }
+                                                    } else {
+                                                    }
+                                                %>
+                                            </select>
+
+                                        </td>
+                                    </tr>
+                                    
+                                    
+                                    <tr>
+                                        <td>
+                                            <label><b>Branch</b></label>
+                                        </td>
+                                        <td>
+                                            <select name="branch" required>
+                                                <option value="">SELECT DEPARTMENT</option>
+                                                <%                                                    retObj1 = commonObj1.getALLDetails("branches");
+                                                    mapObj1 = retObj1.getMapObj();
+                                                    if (null != mapObj1) {
+                                                        for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
+                                                            String key = entry.getKey();
+ Object[] value = (Object[]) entry.getValue();
+                                                %>
+
+                                                <option value="<%=key%>"><%=value[1]%></option>
+
+                                                <%
+                                                        }
+                                                    } else {
+                                                    }
+                                                %>
+                                            </select>
+
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>
+                                            <label><b>Type of User</b></label>
+                                        </td>
+                                        <td>
+                                            <select name="type_of_user" required>
+                                                <option value="">SELECT TYPE OF USER</option>
+
+                                                <%
+                                                    retObj1 = commonObj1.getALLDetails("user_types");
+                                                    mapObj1 = retObj1.getMapObj();
+                                                    if (null != mapObj1) {
+                                                        for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
+
+                                                            String key = entry.getKey();
+                                                            Object[] value = (Object[]) entry.getValue();
+
+                                                %>
+
+                                                <option value="<%=key%>"><%=value[1]%></option>
+
+                                                <%
+                                                        }
+                                                    } else {
+                                                    }
+                                                %>
+                                            </select>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+                                </table>
+
+
+
+                                <CENTER>
+                                    <button type="submit">REGISTRATION</button>
+                                </CENTER>
+
+
+                                <%--<input type="checkbox" checked="checked"> Remember me--%>
+                            </div>
+
+                            <%--<div class="container" style="background-color:#f1f1f1">
+                                <button type="button" class="cancelbtn">Cancel</button>
+                                <span class="psw">Forgot <a href="#">password?</a></span>
+                            </div>--%>
+                        </form>
+
+
+   </div> </div>
+ <div class="clearer"><span></span></div>
+
+          
+
 </body>
+
+</html>
+
+    </body>
 </html>
