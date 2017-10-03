@@ -1,36 +1,33 @@
-<!doctype html>
-<html>
-    <head>
-<link href="/ui/style.css" rel="stylesheet" /> 
-   </head>
-<body>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <body>
 <div class="container">
- <div class="main">
+<div class="main>
 <div class="content">
 <div class="item">
-<h1>User Registration Form</h1>
+<h2>User Registration Form</h2>
 <form action="ReistrationServlet" method="post">
- <div class="container">
-<table>
+<div class="container"> <table>
+<tr>
+<td>
+ <label><b>User Name</b></label>
+ </td>
+ <td>
+<input type="text" placeholder="Enter Username" name="name" required/>
+ </td> </tr>
 <tr>
  <td>
-<label><b>User Name</b></label>
+<label><b>User ID</b></label>
 </td>
 <td>
-<input type="text" placeholder="Enter Username" name="name" required/>
+<input type="text" placeholder="Enter User ID" name="userid" required/>
 </td>
-</tr>
-<tr>
-    <td>
-<label><b>User ID</b></label> </td>
-<td> 
-<input type="text" placeholder="Enter User ID" name="userid" required/></td>
-</tr>
- <tr>
+ </tr>
+<tr><td>
+  <label><b>Password</b></label>
+ </td>
 <td>
- <label><b>Password</b></label>
-</td>
-<td><input type="password" placeholder="Enter Password" name="psw" required/>
+<input type="text" placeholder="enter password" name="psw" required/>
  </td></tr>
 <tr> <td>
 <label><b>Gender</b></label></td>
