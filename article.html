@@ -10,93 +10,64 @@
 <div class="item">
 <h1>User Registration </h1>
 <h2>User Registration Form</h2>
-<%@include file="inc/messages.jsp" %>
- <form action="ReistrationServlet" method="post">
-<div class="container">
- <table>
-
-
-
-                                    <tr>
-                                        <td>
-                                            <label><b>User Name</b></label>
-                                        </td>
-                                        <td>
-                                            <input type="text" placeholder="Enter Username" name="name" required/>
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td>
-                                            <label><b>User ID</b></label>
-                                        </td>
-                                        <td>
-                                            <input type="text" placeholder="Enter User ID" name="userid" required/>
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td>
-                                            <label><b>Password</b></label>
-                                        </td>
-                                        <td>
-                                            <input type="password" placeholder="Enter Password" name="psw" required/>
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td>
-                                            <label><b>Gender</b></label>
-                                        </td>
-                                        <td>
-                                            <select name="gender" required>
-                                                <option value="">SELECT</option>
-                                                <option value="MALE">MALE</option>
-                                                <option value="FEMALE">FEMALE</option>
-                                            </select>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label><b>E-Mail ID</b></label>
-                                        </td>
-                                        <td>
-                                            <input type="text" placeholder="Enter E-Mail ID" name="mail_id" required/>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <label><b>Phone No.</b></label>
-                                        </td>
-                                        <td>
-                                            <input type="text" placeholder="Enter Phone No." name="phone" required/>
-                                        </td>
-                                    </tr>
-                                    <%
-                                    %>
-                                    
-                                    
-                                    <tr>
-                                        <td>
-                                            <label><b>Department</b></label>
-                                        </td>
-                                        <td>
-                                            <select name="department" required>
-                                                <option value="">SELECT DEPARTMENT</option>
-                                                <%                                                    retObj1 = commonObj1.getALLDetails("departments");
-                                                    mapObj1 = retObj1.getMapObj();
-                                                    if (null != mapObj1) {
-                                                        for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
-                                                            String key = entry.getKey();
+<form action="ReistrationServlet" method="post">
+ <div class="container">
+<table>
+<tr>
+ <td>
+<label><b>User Name</b></label>
+</td>
+<td>
+<input type="text" placeholder="Enter Username" name="name" required/>
+</td>
+</tr>
+<tr>
+    <td>
+<label><b>User ID</b></label> </td>
+<td> 
+<input type="text" placeholder="Enter User ID" name="userid" required/></td>
+</tr>
+ <tr>
+<td>
+ <label><b>Password</b></label>
+</td>
+<td><input type="password" placeholder="Enter Password" name="psw" required/>
+ </td></tr>
+<tr> <td>
+<label><b>Gender</b></label></td>
+<td>
+<select name="gender" required>
+    <option value="">SELECT</option>
+    <option value="MALE">MALE</option>
+    <option value="FEMALE">FEMALE</option>
+</select>
+ </td></tr>
+ <tr> <td>
+ <label><b>E-Mail ID</b></label>
+</td>
+<td>
+<input type="text" placeholder="Enter E-Mail ID" name="mail_id" required/></td>
+ </tr>
+<tr>
+<td>
+<label><b>Phone No.</b></label>
+</td>
+<td>
+ <input type="text" placeholder="Enter Phone No." name="phone" required/>
+ </td> </tr>
+<tr><td>
+<label><b>Department</b></label>
+</td>
+<td><select name="department" required>
+<option value="">SELECT DEPARTMENT</option>
+<%   retObj1 = commonObj1.getALLDetails("departments");
+    mapObj1 = retObj1.getMapObj();
+if (null != mapObj1) {
+ for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
+String key = entry.getKey();
  Object[] value = (Object[]) entry.getValue();
                                                 %>
-
-                                                <option value="<%=key%>"><%=value[1]%></option>
+<option value="<%=key%>"><%=value[1]%></option>
 
                                                 <%
                                                         }
@@ -197,7 +168,4 @@
 
 </body>
 
-</html>
-
-    </body>
 </html>
