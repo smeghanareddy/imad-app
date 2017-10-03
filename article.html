@@ -71,21 +71,8 @@
  </td>
 </tr>
 <tr>
-<td>
- <label><b>Type of User</b></label>
- </td>
-<td>
-<select name="type_of_user" required>
-<option value="">SELECT TYPE OF USER</option>
-retObj1 = commonObj1.getALLDetails("user_types");
-mapObj1 = retObj1.getMapObj();
-if (null != mapObj1) {
-for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
-String key = entry.getKey();
-Object[] value = (Object[]) entry.getValue();
-<option value="<%=key%>"><%=value[1]%></option>
-</select>
-</td>
+    <td><label>ADDRESS</label></td>
+<td><input type="textarea" placeholder="address" name="address" required/></td>
 </tr>
 </table>
 <CENTER>
@@ -93,9 +80,10 @@ Object[] value = (Object[]) entry.getValue();
 </CENTER>
 <input type="checkbox" checked="checked"> Remember me
 </div>
-<div class="container" style="background-color:#f1f1f1">                                <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span></div>
+<div class="container" style="background-color:#f1f1f1">                        
+<button type="button" class="cancelbtn">Cancel</button>
+<span class="psw">Forgot <a href="#">password?</a></span></div>
 </form></div> </div>
  <div class="clearer"><span></span></div>
-</body>
+ </body>
 </html>
