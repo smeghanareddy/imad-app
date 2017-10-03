@@ -60,112 +60,49 @@
 </td>
 <td><select name="department" required>
 <option value="">SELECT DEPARTMENT</option>
-<%   retObj1 = commonObj1.getALLDetails("departments");
+ retObj1 = commonObj1.getALLDetails("departments");
     mapObj1 = retObj1.getMapObj();
 if (null != mapObj1) {
  for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
 String key = entry.getKey();
  Object[] value = (Object[]) entry.getValue();
-                                                %>
+ <option value="<%=key%>"><%=value[1]%></option> 
+</select></td> </tr>
+ <tr>
+<td>
+<label><b>Branch</b></label> </td>
+<td><select name="branch" required>
+<option value="">SELECT DEPARTMENT</option>
 <option value="<%=key%>"><%=value[1]%></option>
-
-                                                <%
-                                                        }
-                                                    } else {
-                                                    }
-                                                %>
-                                            </select>
-
-                                        </td>
-                                    </tr>
-                                    
-                                    
-                                    <tr>
-                                        <td>
-                                            <label><b>Branch</b></label>
-                                        </td>
-                                        <td>
-                                            <select name="branch" required>
-                                                <option value="">SELECT DEPARTMENT</option>
-                                                <%                                                    retObj1 = commonObj1.getALLDetails("branches");
-                                                    mapObj1 = retObj1.getMapObj();
-                                                    if (null != mapObj1) {
-                                                        for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
-                                                            String key = entry.getKey();
- Object[] value = (Object[]) entry.getValue();
-                                                %>
-
-                                                <option value="<%=key%>"><%=value[1]%></option>
-
-                                                <%
-                                                        }
-                                                    } else {
-                                                    }
-                                                %>
-                                            </select>
-
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td>
-                                            <label><b>Type of User</b></label>
-                                        </td>
-                                        <td>
-                                            <select name="type_of_user" required>
-                                                <option value="">SELECT TYPE OF USER</option>
-
-                                                <%
-                                                    retObj1 = commonObj1.getALLDetails("user_types");
-                                                    mapObj1 = retObj1.getMapObj();
-                                                    if (null != mapObj1) {
-                                                        for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
-
-                                                            String key = entry.getKey();
-                                                            Object[] value = (Object[]) entry.getValue();
-
-                                                %>
-
-                                                <option value="<%=key%>"><%=value[1]%></option>
-
-                                                <%
-                                                        }
-                                                    } else {
-                                                    }
-                                                %>
-                                            </select>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-                                </table>
-
-
-
-                                <CENTER>
-                                    <button type="submit">REGISTRATION</button>
-                                </CENTER>
-
-
-                                <%--<input type="checkbox" checked="checked"> Remember me--%>
-                            </div>
-
-                            <%--<div class="container" style="background-color:#f1f1f1">
-                                <button type="button" class="cancelbtn">Cancel</button>
-                                <span class="psw">Forgot <a href="#">password?</a></span>
-                            </div>--%>
-                        </form>
-
-
-   </div> </div>
+</select>
+ </td>
+</tr>
+<tr>
+<td>
+ <label><b>Type of User</b></label>
+ </td>
+<td>
+<select name="type_of_user" required>
+<option value="">SELECT TYPE OF USER</option>
+retObj1 = commonObj1.getALLDetails("user_types");
+mapObj1 = retObj1.getMapObj();
+if (null != mapObj1) {
+for (Map.Entry<String, Object[]> entry : mapObj1.entrySet()) {
+String key = entry.getKey();
+Object[] value = (Object[]) entry.getValue();
+<option value="<%=key%>"><%=value[1]%></option>
+</select>
+</td>
+</tr>
+</table>
+<CENTER>
+ <button type="submit">REGISTRATION</button>
+</CENTER>
+<input type="checkbox" checked="checked"> Remember me
+</div>
+<div class="container" style="background-color:#f1f1f1">                                <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span></div>
+</form></div> </div>
  <div class="clearer"><span></span></div>
-
-          
-
 </body>
-
 </html>
